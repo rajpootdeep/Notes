@@ -1,0 +1,100 @@
+Linux/Unix
+
+"$ vi file.sh"  // open vi editor in normal mode, press ESC for insert mode after that enter 'i' keys then write command to the file, after entering commands press ESC and :wq! to save and exit from editor.
+To make file as executable enter "$ chmod +x file.sh "
+
+to execute shell script enter "$  ./file.sh " .
+
+# set environment variable in linux
+$ export varname=value // create new variable
+$ varname=value  // alternate wayys to create a variable
+note- variables are case sensitive.
+
+*export - :
+
+$ export // display all environment vars of your system
+$ export [options]
+-p //display all exported vars in current shell
+
+name(){echo "var";} - a function
+$ export -f name // export a function
+ 
+$ printenv var // print the value of xported var
+
+$ export EDITOR=/usr/bin/vim //
+$ export | EDITOR // set  vim as default text editor
+
+
+$ echo varname // display variable name
+$ echo $ varname // display varibale value or accessing env variable
+
+export PATH=$PATH:/home/jdk1.8/bin/  // to set java env variable
+
+$ env // display all environment variablein the system
+
+$ unset varname // to remove/delete env var
+
+# Linux "set" command use to set or  unset flags, flags define behaviour of defined script
+
+exp -: 
+
+$ set -x //show the command and thier arguement // to turn off enter " set +x".
+
+$ set -c  // to disable the default behaviour of BASH
+
+$ set -e // to stop script immediately
+
+$  set --help
+
+
+* BASH (Bourne-Again Shell) is default shell in linux.
+* there are two types of shell commands
+1. Built-in -> part of shell, each shell has some built in commands
+2. Externa/Linux commands : each external command is a separate executable program written in programming language i.e. C
+
+
+#Linux directory command
+$ pwd  //print pren=sent working directory
+$ pwd -L //show present dir with logical path
+$ pwd -P //how with physical path
+
+$ ls //list all folders
+$ ls -a //list all files including hidden files
+$ ls -l //list in long list format
+$ ls -lh //display file sizes
+$ ls -lhS //displays files sizes in descending order
+$ ls -r //print the lsit in reverse order
+$ ls ~ // gives content of home directory
+$ ls ../ //gives contents of parent directory
+
+
+ cd //  changing directory
+$ cd // it will back to home directory  from any directory we are working
+$ cd ~
+$ cd $Home //same as $ cd
+$ cd - // take to previuos directory
+$  cd .. //parent direcotry
+$ cd/ //change to root direcotry
+$ cd ~username // change to another users home direcotry
+$ cd 'directory name with space' // to specified dir
+$ cd Dir\name\with\space //same as above one
+
+
+
+
+ mkdir // create new directory
+ rmdir // remove directory
+$ rmdir -p //delete directory it's sub directory
+
+$ mv oldfile newname //rename the file
+$ rename <expression> <directory> // rename files same as mv
+$  rename 'y/A-Z/a-z/'* //rename all directory from upper case to lowercase
+$ rename 's/\.txt$/\.pdf/'*.txt // rename all text file as pdf files
+
+
+
+* "/home" -> also called login directory, personal working space except root user, it is sub directory of the root directory
+* "/root/" -> path of root user, 
+
+
+
