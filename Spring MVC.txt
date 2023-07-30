@@ -1,0 +1,52 @@
+Spring MVC
+
+*Used to develop web application, it  follows Model-View Controller design pattern
+*Dispatcher servlet (Front controller, i.e. responsible to manage flow of spring MVC applicaton) is a class that receives the incoming request and maps to controller maodel views.
+* Dispatcher servlet dispatches request to handlers
+
+#Steps to create simple Spring MVC applioaction -:
+
+1. Pom.xml - for dependency
+2. Request page i.e. JSP or etc
+3. Controller class
+4. web.xml - entry of controller, it contains Dispatcher servlet (In java based configuration we create WebInitializer.java in place of web.xml and MVCconfig.java is used in place of dispatcher servlet).
+5. spring-servlet.xml - define bean and other configurations
+
+* ViewResolver enables to render models in browser.
+
+Annotations :
+
+@RequestParam - to extract input data may be passed as a query or form data.
+
+@RequestMapping - used to map HTTP request to handler methods of MVC and REST controllers. (We can also use at class level)
+
+@ResponseBody - tells controller that object returned is automatically serialized into JSON and passed back to HttpResponse object, when we use this annotatoion at method, spring converts the return value and writes it to the HTTP response automatically.
+
+@ModelAttributr() - Binds a method parameter or method return value to a named model atrribute and then expose it to a web view.
+
+@Component - it is a class level annotation, used to denote class as component.
+@Service - It is used to mark the classes as service provider, used at class level only.
+@Component - to indicate that class provide the machanism for storage, retrieval, udate, delete, and  search operations on object.
+@Controller - mark class as controller/web request handler
+
+
+# Valiadtion annotation (Hibernate Validator)
+1. @Min(value=18, message="Must be greater than 18")
+2. @Max(value=25, message="Must be lass than 25")
+3. @NotNull(message="")  - not null, can be empty
+4. @NotBlank(message="") - String is not null and trimmed length is >0
+5. @NotEmpty(message="") - not null and size >0
+6. @Email(message="") - valid email address
+7. @Pattern(regexp="^[a-zA-Z]{6,10}$")
+8. @AssertTrue - element should be true
+9. @AssertFalse - element should be false
+10. @NegativeOrZero
+11. @Null
+12. @Negative
+13. @Positive
+14. @PositiveOrZero
+15. @Size(min=10, max=200, message="")
+
+* Model Interface - provide spring to work with data, tranfer data between view and controller, acts as data container
+
+
