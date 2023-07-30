@@ -84,9 +84,11 @@ $ cd Dir\name\with\space //same as above one
 
  mkdir // create new directory
  rmdir // remove directory
+rm //removes a file
+
 $ rmdir -p //delete directory it's sub directory
 
-$ mv oldfile newname //rename the file
+$ mv oldfile newname //rename the file // moves the file
 $ rename <expression> <directory> // rename files same as mv
 $  rename 'y/A-Z/a-z/'* //rename all directory from upper case to lowercase
 $ rename 's/\.txt$/\.pdf/'*.txt // rename all text file as pdf files
@@ -96,5 +98,84 @@ $ rename 's/\.txt$/\.pdf/'*.txt // rename all text file as pdf files
 * "/home" -> also called login directory, personal working space except root user, it is sub directory of the root directory
 * "/root/" -> path of root user, 
 
+alias - convert complex command into simpler one
+bzip2 /bunzip2 - compress/decopmress bzip2 file
+bzcat/bzmore - display files compressed with bzip2
+cal - display calender
+cat - create a file, diplay content, copy content of one file to another file  and more, use ctrl +  d to save the file
+chage - set expiration date for a user account
+chgrp - change group
+chmod - change permission for file directory
+chown -changes the owner of a file directory
+chsh - changes the shell
+clear - clears the terminal
+comm - compares two stream or files, diplays three columns first one non matching items from 1st file , second one indcates non matching items of second file and third one column displays the matching items of both files. "$comm <file1> <file2> " .
 
+cp - copy file
+cut - used to display the desired column from a file
+cut -d(delimeter) -f(columnNumber) filename  ->  delimeter can space , slash, hyphen, etc. 
+
+date - displays the current date
+df - checks the disk space in the system
+echo - prints the typed words on terminal
+exit - exits from the current user group to the last group
+export - exports shell variable to other shells
+file - displays the type of file
+find - finds files for particular search
+gpasswd -  transfer group membership to another user
+
+grep (global regular expression print) - filter lines of text containing a certain string.
+command | grep <search word>
+
+groupadd - creates a group
+groupdel - permanently removes a group
+groupmod - changes group name
+groups - displays the group name to which the current user belongs to
+gzip/gunzip - compress file/decompress a gzip file
+head - displays the first ten lines of a file
+history - displays older commands from the shell command history
+HISTSIZE - determines the no fo command to be stored in the current environment
+HISTFILE - Displays the file that contains the history
+HISTFILESIZE - sets the no of commands kept in the history file
+id - tells about the user's id in the system
+less - displays file content according to the width of terminal
+locate - search a file in dtabase
+man - displays the manual page for the specified command
+
+more - displays one output screen at time,
+Enter key to scroll down page by line, space bar to move next page, b key to move previous page,  /key to search the string
+
+less - similar to more commad, it adjust in width and height of terminal, more command cuts the output in the width of terminal.
+
+od - displays file content in octal format
+passwd - set a password for user group
+ps1 - changes the prompt name in terminal
+set -o noclobber - prevents file from getting overwritten
+set +o noclobber - allows overwritting in the existing file
+set -u - displays undefined variable as error 
+set  +u - nothing for undefined vars
+set -x - displays shell expansion
+set +x -  disables shell expansion
+sleep - waits for the specified no of seconds
+sort - sorts content in albhabetical order
+su - allows user to run a shell as another user
+sudo - allows user to start a program with the credentials of other user
+tac - displays file content in opposite order
+tails - displays last 10 lines of files
+tar - compress a directory
+time - displays the time taken to execute the command
+touch - create a empty file
+type - displays information about command type
+uniq - sorts and display multi times repeating lines only once
+unset - removes a variable from a shell
+useradd - add users
+userdel - delete uders
+usermod - modifies the properties of user
+w - displays who is logged on and what are they doing
+wc - counts words lines and character
+who - tells who is logged on the system
+whoami - tells the name of user
+who am i - displays the line pointing to your current session
+zcat/zmore views the files comressed with gzip
+ 
 
