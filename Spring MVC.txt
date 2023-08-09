@@ -16,19 +16,35 @@ Spring MVC
 
 Annotations :
 
-@RequestParam - to extract input data may be passed as a query or form data.
+@RequestParam - to extract (input data may be passed as a) query parameter or form parameter and even files from request.
+@RequestParam(name="id") [(value="id"), ("id")] String foodId
+
+#optional request parameters
+@RequestParam(required=false) String id - when parameter is not specified , the method parameter is bound to null.
+we can also use  Optional<T> like PathVariable in rest api. [ id.orElseGet(() -> "not provided" ].
+
+#default value to RequestParameter
+@RequestParameter(defaultValue="test" String id)
+#Mapping all parameters without defining their names or count by just using Map.
+@RequestParam Map<String,String> allParams
+#Mapping Multivalue parameter
+@RequestParam List<String> id
+
+Ex. 
+@RequestParam(name="name", required=false, defaultValue="world").
+
 
 @RequestMapping - used to map HTTP request to handler methods of MVC and REST controllers. (We can also use at class level)
 
-@ResponseBody - tells controller that object returned is automatically serialized into JSON and passed back to HttpResponse object, when we use this annotatoion at method, spring converts the return value and writes it to the HTTP response automatically.
 
-@ModelAttributr() - Binds a method parameter or method return value to a named model atrribute and then expose it to a web view.
+@ModelAttribute() - Binds a method parameter or method return value to a named model atrribute and then expose it to a web view.
 
 @Component - it is a class level annotation, used to denote class as component.
 @Service - It is used to mark the classes as service provider, used at class level only.
-@Component - to indicate that class provide the machanism for storage, retrieval, udate, delete, and  search operations on object.
-@Controller - mark class as controller/web request handler
+@Component - to indicate that class provide the machanism for storage, retrieval, udate, delete, and  search operations on object, to marks the bean as spring managed components.
 
+@Controller - mark class as controller/web request handler
+@Service - it indicate, the class holding the business logic
 
 # Valiadtion annotation (Hibernate Validator)
 1. @Min(value=18, message="Must be greater than 18")
@@ -47,6 +63,15 @@ Annotations :
 14. @PositiveOrZero
 15. @Size(min=10, max=200, message="")
 
-* Model Interface - provide spring to work with data, tranfer data between view and controller, acts as data container
+* Model Interface - provide spring to work with data, tranfer data between view and controller, acts as data container, supply attributes used for rendering views.
+* ModelMap - It also used to pass values to render a view., it gives the ability to pass a collection of values.
+* ModelAndView - Return both model and view in single return value.
 
 
+* @SpringBootApplication - used to mark the main class of Spring Boot Appliaction, it encapsulates  @Configuration, @EnableAutoConfiguration and @ComponentScan annotations with thier default attributes.
+
+@Configuration - tags the class as source of bean definations for the application context
+@EnableAutoConfiguration - it's name suggest , means Spring Boot looks for auto configuration beans on it's classpath and automatically applies on them.
+
+ 
+* @ControllerAdvice - To handle exception at global level 

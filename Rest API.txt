@@ -1,2 +1,35 @@
 @JsonTransient - not display in json output that filed
 
+
+                                                              Spring MVC with Rest API
+
+@ResponseBody - tells controller that object returned is automatically serialized into JSON and passed back to HttpResponse object, when we use this annotatoion at method, spring converts the return value and writes it to the HTTP response automatically.
+
+@Requestbody - convert data from Json to Java object.
+
+@PathVariable("aid") int aid  - used to handle template variables in the request URI mapping, and set them as method parametes.
+
+#handle more than one path variable parameter using method parameter type java.util.Map<String,String>
+
+@PathVariable Map<String, String> pathVarsMap -
+
+#optional path variable with not required option -:
+
+@GetMapping(value={"/api/employee","/apiemployee/{id})
+method(@PathVariable(required = false) String id){}
+
+it is also possible by java.util.optional<T>
+@PathVariable Optional<String> id
+if(id.isPresent())
+
+We  can also handle optional path varible using Map.
+
+
+
+Spring Boot exception Handling :
+
+@RestControllerAdvice + @ExceptionHandler
+
+1. Create Global Exception Handler class and annotate with RestControllerAdvice
+2. @ExceptionHandler(value ={IOException.class}) - annotate at method level that return error message
+3. @ResponseStatus(HttpStatus.BAD_REQUEST) - 

@@ -1,0 +1,276 @@
+java.util.Optinal
+
+Optional<T> empty() - returns emplty optional object
+            of(T) - returns optional with specified non-null value
+            ofNullable()
+
+T get() - retuens value if present otherwise thorws NoSuchElementException
+isPressent() - returns true if value is present
+orElse(T other) - returns the value if present,  otherwise false
+toString() - returns non-empety string representation of this optional suitable for debugging
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Collection - Interface
+			  List - Like array
+           		  Set - store elements in different sets
+	    		  Queue - To store elements in FIFO manner
+
+Collection methods - add(), size(), remove(), clear(), iteerator(), addAll(), removeAll().
+
+ 
+-----------------------------------------------------------  List - Interface  -------------------------------------------------------------------------------
+
+
+						ArrayList
+						LikedList
+						Stack
+						Vector   - > all these class implements List
+
+			Methods of List
+					get(), set(), toArray(), toString() - convert list in to array, contains()
+
+
+
+		 ArrayList - like dynamic array, Collections.synchronizedList() method that synchronizes the list as a whole
+                         
+                            Methods of ArrayList - clone(), sort(), ensureCapacity(), isEmpty(), indexOf()
+
+		LinkedList - also implements Queue and Deque
+
+                            Methods of LinkedList - addFirst(),getFirst(), removeFirst(), AddLast(),get()
+
+                Vector - it synchronizes each individual operation, vecotr class is less efficient, recoment to use array list.
+                       
+			  Methods of Vector - get(), 
+
+
+               Stack - extends vector class, recomended to use ArrayDeque
+              
+                    Methods - push(), pop(), peek(), search(elements name) - returns index, empty(),  
+
+
+
+
+--------------------------------------------------------------  Queue (Interface)  -----------------------------------------------------------------------------
+
+							
+							PriorityQueue
+							Deque - Interface
+                                                               ArrayDeque
+							       LinkedList
+
+			Queue Methods - offer() - add specified elements and return boolean, elements() - return head of queue, peek(), remove(), poll()
+
+
+   			PriorityQueue - provides functionality of heap data structure, elements of a priority queue may not be sorted. However, elements are always             retrieved in sorted order.
+
+
+    			PriorityQueue Methods - add(), offer(), remove(), poll(), contains(), toArray()
+
+
+							
+  			Deque -  push(), pop(), peek
+ 	
+				ArrayDeque
+				LinkedList
+
+
+                       ArrayDeque - it implements both Queue and Deque both interface.
+
+
+                        Methods - add(), addFirst(), addLast(), offer(), offerLast(), offerFirst(), getFirst(), getLast(), peek(), peekFirst(), peekLast(), remove(), remove(element), removeFIrst(), removeLast(), poll(), pollLast(), PollFirst(), clear(), descendingIterator(), 
+
+
+
+
+
+-------------------------------------------------------------------  SET (Interface)  ----------------------------------------------------------------------------
+
+                          Set - can't contains duplicate elements
+
+
+                                HashSet
+				LinkedHasSet
+				EnumSet
+				TreeSet
+
+
+ 				Methods of Set - retainAll(another set)- retain all elements in set that are also avlb in specified set, contains(), containsAll(),              			        		toArray(), hashCode().
+
+
+                                 to check if x is a subset of y, we can use y.containsAll(x)
+			        intersection of two set x.retainAll(y)
+				union of two sets x.addAll()
+
+
+
+
+				HashSet - capacity = 16, loadfactor = 0.75, elements in a hash table are accessed using hash codes, notImplicitally synchronised, 
+
+						Methods - difference of two sets x.removeAll(y), clone(), isEmpty(), 
+
+
+
+				LinkedHashSet - linked hash sets maintain a doubly-linked list internally for all of its elements. The linked list defines the order in 						which elements are inserted in hash tables., all methods of HashSet included, 
+
+
+
+				TreeSet - 
+
+						Methods : first(), last(), pollFirst(), pollLast(), headSet(,), tailSet(,) , subSet(,,,) 
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------   MAP  --------------------------------------------------------------------------------------
+
+
+
+
+
+for each loop :
+for(String i:list)
+
+
+
+LinkedList is same as ArrayList, the only difference is LinkedList contains it's items in containers and one container linked to another conatiner
+addFirst(),getFirst(), removeFirst(), Last
+
+
+HashMap<Key ,Value> -: stored items as sorted collections
+put(key, value), get(Key), remove(key), clear(), size()
+for(String i: Hs.keySet())
+              Hs.Values()
+
+
+HashSet<String> -: Every items are unique
+
+add(), Contains("Used to check item exist  or not") - return tru or false  , remove(), clear(), size()
+
+
+
+Iterator<String> it=list.iterator();
+
+it.hasNext() and it.next()
+
+
+
+Collections class :- 
+1. sort method - to sort alphabetically or numerically
+2. 
+
+
+
+                                                                                    Enum
+
+
+
+enum Status{
+Running, Failed, Pending, Success;
+}
+
+
+Status s= Status.Running;
+s.ordinal() - gives index value of Status value aasigned.		
+Status.values() - gives array.
+
+enum Laptop{
+MacBook(price: 200), XPS(Price:100);
+
+private int price;
+private Laptop(int price){
+this.price=price;}
+
+}
+
+
+
+                                                                                       Date
+
+LocalDate d=LocalDate.now();
+     
+LocalTime
+LocalDateTime
+DateTimeFormatter
+.ofPattern()
+.formatter()
+
+
+
+
+                                                                                      Lambda
+
+
+(parameter1, parameter2) -> expression
+
+(parameter1, parameter2) -> { code block }
+
+StringFunction exclaim = (s) -> s + "!";
+numbers.forEach( (n) -> { System.out.println(n); } );
+
+
+
+Anonymous Object - it has no refrence, can't re-use.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Type Casting - Converting data type of var, from lower to higher is implicitlly converted but from higher to lower , explicit coversion is required i.e. narrowing conversion.
+
+Upcasting - It happens implicitlly, 
+ 
+
+A obj= new B()  // upcasting , we can't call method of B by this object
+Downcasting -
+B obj=(B) obj;  // 
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Inner class -  class inside class
+A ob= new A()
+A.B obj= ob.new B();
+A.B obj= new A.B() // if  inner class B is static
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Comparable has compareTo() method, provides single sorting sequence, logic of sorting must be in same class , for natural sorting order, all wraper classes and String classes implements Comparable interface.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+forEach Method - it takes object of consumer, consumer is funtional interface, 
+
+
+Consumer<Integer> con=new Consumer<>(){
+public void accept(Integer n)
+{
+sysout(n);
+}
+};
+list.forEach(con);
+
+list.forEach(n -> syout(n));
+
+---------------------------------------------------------------------------------------------
+
+Stream (Interface) -Is sequence of objects that supports various methods which can be pipelined to produce the desired result,Stream is lazy and evaluates code only when required.
+Once the stream is used it can't be reused.
+
+Stream<Integer> s= list.stream();
+s.filter(n  -> n%2==0).
+
+
+
+-----------------------------------------------------------------------------------------------
+Volatile - volatile variable is never be stored in the cache, all read and write done from main memory,indicate that a variable's value may be modified by multiple threads simultaneously, where multiple threads are accessing shared variables, updates to that variable are immediately visible to other threads
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Arrays class in java - is part of java collection  framework, it provide static method and method of object class.
+asList() - return List
+
+
+Thread/MultiThreading
+Collections
+Stream API
+
+

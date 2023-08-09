@@ -1,0 +1,8 @@
+@PathParam
+
+Exceptions are handled by ExceptionMapper - Maps the exception generated explicitaly 
+
+ExceptionMapper - interface
+WebApplicationException - super class of all exception in JAx-rs
+
+Exception support 

@@ -1,0 +1,11 @@
+* By default SpringBoot enables JPA repository support and looks in the package and sub packages where @SpringBootApplication is located.
+you can point out at other location by using @EnableJpaRepositories and it's type-safe basePackageClasses=MyRepository.class parameter.
+
+
+# @RepositoryRestResource -
+@ Spring Data use HAL format for JSON output
+
+@Repository - it is specialization of @Component annotation, which is used to indicate that class provide the mechanism of store, retieve, update, delete and search operations, repository classes are auto detected by by spring framework through classpath scanning,  it has automatic persistence exception translation enabled.
+
+
+
