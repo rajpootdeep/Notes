@@ -1,0 +1,21 @@
+Design Pattern
+
+SOLID principles
+
+JUnit
+
+Cloud Computing
+
+AWS
+
+Java EE component
+
+Appliaction Containers
+
+Spark
+
+Deploying Java Applications
+
+Data Structures
+
+SDLC

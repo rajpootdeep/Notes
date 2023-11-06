@@ -1,0 +1,169 @@
+API key
+4Rv4T8pE05bIh3EYnznd6O2eJ
+
+API key secret 
+faFw3fw7krCDR1cxfwQVjmAhb9k2cAMbhFRouOPc93s8bp61ub
+
+
+Bearer
+
+AAAAAAAAAAAAAAAAAAAAAO5MqwEAAAAA60L1NNdRrY80PN%2Biix%2BriITOXc0%3DaZj62NJUEpN45HslRT55noPhlDdnDFQHuNbYCCJcPDvUZIgqc7
+
+
+
+
+client id 
+aTV4XzZxR2xXM3NaTDNORkgtUk86MTpjaQ
+
+client secret 
+cujAVb9p4FUlM5dbqZ01Jay9VshheSKSFKp817rkon1tNx1VNU
+
+cujAVb9p4FUlM5dbqZ01Jay9VshheSKSFKp817rkon1tNx1VNU
+-----------------------------------------------------------------------   MySQL Stored Procedure  - -------------------------------------------------------------------
+
+delimiter //
+create procedure p_name(in t int, out o int, inout io int)
+begin 
+
+ 
+declare count int default 0;
+
+
+declare action handler conditional value
+
+begin
+
+stt
+
+end;
+
+
+
+
+stt
+
+end//
+delimiter ;
+
+set @io=10;
+call p_name(1,@O,@io);
+
+
+==================
+
+
+DECLARE handler_action HANDLER
+    FOR condition_value [, condition_value] ...
+    statement
+
+handler_action: {
+    CONTINUE
+  | EXIT
+  | UNDO
+}
+
+condition_value: {
+    mysql_error_code
+  | SQLSTATE [VALUE] sqlstate_value
+  | condition_name
+  | SQLWARNING
+  | NOT FOUND
+  | SQLEXCEPTION
+}
+
+===========================
+IF search_condition THEN statement_list
+    [ELSEIF search_condition THEN statement_list] ...
+    [ELSE statement_list]
+END IF;
+
+
+
+DELIMITER //
+
+CREATE FUNCTION VerboseCompare (n INT, m INT)
+  RETURNS VARCHAR(50)
+
+  BEGIN
+    DECLARE s VARCHAR(50);
+
+    IF n = m THEN SET s = 'equals';
+    ELSE
+      IF n > m THEN SET s = 'greater';
+      ELSE SET s = 'less';
+      END IF;
+
+      SET s = CONCAT('is ', s, ' than');
+    END IF;
+
+    SET s = CONCAT(n, ' ', s, ' ', m, '.');
+
+    RETURN s;
+  END //
+
+DELIMITER ;
+
+======================
+
+CREATE PROCEDURE dowhile()
+BEGIN
+  DECLARE v1 INT DEFAULT 5;
+
+  WHILE v1 > 0    DO
+    ...
+    SET v1 = v1 - 1;
+
+
+  END WHILE;
+END;
+
+===============
+nme: loop
+
+leave name;
+
+end loop;
+
+=================
+
+DECLARE cursor_name CURSOR FOR select_statement;
+
+declare continue handler for not found set falg :=true;
+
+open cursor_name
+
+fetch cursor_name int a, .....;
+
+close cursor_name;
+
+===========================
+
+case [value]
+when ----  then ----;
+when...
+
+end case;
+
+  
+
+
+
+
+-----------------------------------------------------------------------------------  JDBC  --------------------------------------------------------------------
+
+protocol:subprotocol:subname
+
+jdbc:mysql://localhost:3308:/app
+
+Statement interface -> PreparedStatement(enable us to execute SQL statements )  ->  CallableStatement
+
+Connection string holds DriverManager.getConnection();
+
+DriverManager -> Connection ->PreparedStatement -> Execute the SQL
+
+
+
+
+@Transactional - automatically begin and end the a transaction for your JPA code. Handles transaction management
+
+@Repository - specialized annotations for repositories, supports component scanning, translate JDBC exception

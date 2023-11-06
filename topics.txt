@@ -1,0 +1,56 @@
+Maven test report - : 
+
+mvn clean test
+
+mvn site -DgeneratedReports=false
+
+mvn surefire-report:report-only
+
+
+
+
+
+Java 8 features :
+
+
+
+Collectors class
+
+
+
+Method refrence
+
+------------------------------------------------------------------------------------------
+
+
+Collection class
+
+Arrays class
+
+
+Functional Programming 
+
+JVM architecture 
+
+
+
+Concurrency
+
+Future
+
+
+
+POJO
+
+BoilerPlate Code
+
+Beans
+
+JMS
+
+JMX
+
+
+
+Logging in SpringBoot
+

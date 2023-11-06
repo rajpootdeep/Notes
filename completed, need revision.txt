@@ -1,0 +1,182 @@
+                       
+
+
+Association ( Aggregation + Composition)   
+
+Predicate - java.util.function , functional interface  -  use when you want filter/match
+BiPredicate -  same as Predicate but it accept two different types generic variables
+
+Consumer  -
+
+BiConsumer - 
+
+Supplier - 
+
+Function  - R apply(T t)  - use when need to transform input and generate  different output
+
+BiFunction<t,u,r> - two accept parameter - R apply(T t, U u)
+
+		Similar to Function
+UnaryOperator - T apply(T t)
+BinaryOperator - T apply(T t1, T t2)
+
+Method Refrence
+
+SAM Interface ( Single Abstract Method) 5
+
+private static volatile int var   5
+
+Collection   3
+
+Interface in java 8 - by default method is public and abstract, members are public static and final, methods can be default and static with method defination 
+			can only declaire constant(non instance variable)
+
+Interface in 11 - Can have private method and this can be static and non-static	`
+
+Marker / Tag Interface
+
+Default Methods
+
+Static method in interface
+
+
+Lambda Expression  - It is also an instance of a class that implements a functional interface
+
+Functional Interface - have SAM
+
+
+Method Refrence - 
+
+Styles -: Bound - instance known at compile-time, 
+	  Unbound - instance provided at runtime
+	  Static
+	 Constructor 
+
+
+
+
+
+
+Optional class 
+
+
+
+Multithreading
+
+Thread pool is a set of reusable worker threads available to execute tasks
+
+ExecuterService is interface that provides services for the creation and management of threads
+
+Executors utility class provides static method that return ExecutorService implementation
+
+Types of executor service  ---:
+
+Single thread pool executor - a single thread is used ; tasks are processed sequentilly
+
+Cached thread pool executor - creates new threads as needed and resuses threads that have become free
+
+Fixed thread pool executor  - creates a fixed number of threads which is specified at the start
+
+A callable<v> is very similar to a Runnable except that Callable can return a result and throw a checked exception, callable has  " V call() throws Exception" functional method 
+
+
+A Future<V> is used to obtain the results from a Callable's call() method
+
+A Future<V> object represents the result of an asynchronous computation. Methods are provided to check if the computation is complete (isDone()) and to retrieve the result of that computation (V get())
+
+
+Executors exists that enable us to schedule tasks to be performed at some time in future or in particular interval 
+to create scheduled  executors - 
+
+ScheduledExecutorService interface provides 4 methods to schedule tasks: 
+
+
+ -------------------------------------------------------------------  Stream API  -----------------------------------------------------------------------------------
+
+ Stream is sequence of data,
+
+ Arrays.stream(arr) - stream array
+ Collection use stream() method 
+
+ Map use entrySet to get set view and then stream() method of collection
+
+ Stream.of() - method to get stream of varags parameter and returns an ordered stream of those values
+
+ Stream.generate( Supplier ) - generate infinite stream   - limit(int) - can make it finite
+
+
+ Reductions - are also type of terminal operation where all of the contents of the stream are combined into single primitive or Object(Collection) -
+
+ count(),
+
+ min(Comparator), max(),
+
+ reduce(T identity, BinaryOperator) - identity is the initial value of the reduction and also what is returned if the stream is empty.
+
+ reduce(0, BiFunction accumulator, BinaryOperator combiner) - usefull for parallel stream,
+
+ collect(Supplier , BiConsumer accumulator, BiConsumer combiner)  -  this is mutable reduction 
+ collect(Collectors) 
+
+ --------
+ map(Function) - transforming data
+
+ flatMap() - 
+
+ sorted()  - 
+
+
+
+------------------------------------------------------------------------------------  Collection  -------------------------------------------------------------------
+
+Collection - add(obj), remove(obj), isEmpty(), size(), contains(obj), removeIf(Predicate), forEach(), clear()
+
+List - List.of() immutable, List.copyOf(Collection) immutable, Arrays.asList() fixed and backed by array, add(ind,e), get(ind), remove(ind), replaceAll(UnaryOperator),      set(ind,e)
+
+Stack    push(obj), peek(), pop(), 
+
+LinkedList -  add(), addFirst(), addLast(), remove(), removeFirst(), removeLast(),
+
+
+Set()  -  Set.of() immutable , Set.copyOf(Collection) immutable, 
+
+HasSet  - un ordered, no duplicate,  use hashcode of the object being inserted, better access performance you will get, 
+
+
+TreeSet   -  
+
+
+ 
+Map  -  clear(), containsKey(obj), containsValue(obj), entrySet(return Set view of the key/value pairs), forEach(BIConsumer), get(key), isEmpty(), put(k,v), putIfAbsent(k,v), remove(k), replace(k,v), replaceAll(BiFunction), size(), values(collection views of all the values)
+
+Queue - element(), peek(), add(), offer(), remove(), poll(), 
+
+Deque  - getFirst(),peekFirst(), getLast(), peekLast(), addFirst(), offerFirst(), addLast(), offerLast(), removeFirst(), pollFirst(), removeLast(), pollLast(), 
+
+
+
+
+equals() - compare two objects refreneces using the == operator
+
+--------------------------------------------------------------------  Generics ----------------------------------------------------------------------------------
+From 1.5 , prior to Generics collections are  known as raw collection whic are not type safety. Generics enable us to to write code of one type thatis applicable  for all types.
+
+
+to solve the polymorphisam issue for generics , we use the wildcard quetion mark symbol ?
+Unbounded wildcard ?
+Upper bound wildcard ? extends type  - (ist<? extends Number > list) -> Downward , 
+Lower bound wildcard ? super type  - List<? super Integer> list  -> Upward(can handle list of integer or any super type of Integer  , safe to add
+
+For generic method generic marker is declared just before the return type
+
+
+
+
+
+
+
+------------------------------------------------------------------------ Private Interface  -----------------------------------------------------------------------
+
+
+
+
