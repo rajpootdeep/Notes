@@ -179,3 +179,6 @@ who am i - displays the line pointing to your current session
 zcat/zmore views the files comressed with gzip
  
 
+--------------------------------------------------------------  Shell Scripting ------------------------------------------------------------------------------------
+
+

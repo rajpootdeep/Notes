@@ -1,0 +1,164 @@
+----------------------------------------------------------------  SOLID Principles  --------------------------------------------------------------------
+
+
+
+
+
+
+
+Single Responsibility Principle
+
+Open Closed Principle
+
+Liskov Substitution Principle  - A derived class instance can substitute a parent class instance.
+
+Interface Segregation Priciple
+
+Dependency Inversion Principle   - High level module should not depend on low level module, A high level and low level module should depend on abstraction`
+
+
+
+
+---------------------------------------------------------------- UML Diagram -------------------------------------------------------------------------
+
+
+
+----------------------------------------------------- Topics  ----------------------------------------------------------------------------------------
+
+Parking Lot
+
+Snake aand ladders
+
+chess
+
+Ludo
+
+tic tac to
+
+BookMyShow
+
+
+ATM
+
+Elevator System
+
+Vending Machine
+
+
+Hotel Management
+
+Car Rental
+
+Designing - Typehead, File System, Cricbuzz, LinkedIn, JIRA
+
+
+Splitwise
+
+RateLimiter
+
+Messaging Queue Distributed Cache
+ 
+
+
+
+-----------------------------------------------------------------  Design Pattern   ------------------------------------------------------------------
+
+
+https://sourcemaking.com/design_patterns
+
+
+
+
+
+
+
+
+
+
+Creational Design Pattern
+
+
+*Abstract Factory 
+
+*Factory Method
+
+*Builder 1 - multiple optional arguemnt, method chainig, data inconsistent 
+
+Object Pool
+
+Prototype
+
+*Singleton  1
+
+
+Structural Design Pattern
+
+
+
+*Adapter
+
+Bridge
+
+Composite
+
+*Decorator 1 inheritence, add funtionality at run time
+
+Facade
+
+Flyweight
+
+Private Class Data
+
+Proxy
+
+
+
+Behavioral Design Pattern
+
+
+
+
+*Chain Of Responsibility
+
+Command
+
+Interpreter
+
+*Iterator 
+
+Mediator
+
+Memento
+
+*Null Object 
+
+*Observer - one is subject and another will be observer , observer will observe when subject/observable changed it's state
+
+*State  if we have to change the behavior of object based on its state
+
+Strategy
+
+Template Method
+
+Visitor
+
+---------------------------------------------------------------------
+Design Pattern for Microservices -: 
+
+
+
+1. Strangler Fig Pattern
+2. API Gateway Pattern
+3. Backends for Frontends Pattern (BFF)
+4. Service Discovery Pattern
+5. Circuit Breaker Pattern
+6. Bulkhead Pattern
+7. Retry Pattern
+8. Sidecar Pattern
+9. Saga Pattern
+10. Event-Driven Architecture Pattern
+11. CQRS (Command Query Responsibility Segregation) Pattern
+12. Configuration Externalization Pattern
+
+
+

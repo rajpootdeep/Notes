@@ -39,12 +39,21 @@ Ex.
 
 @ModelAttribute() - Binds a method parameter or method return value to a named model atrribute and then expose it to a web view.
 
-@Component - it is a class level annotation, used to denote class as component.
-@Service - It is used to mark the classes as service provider, used at class level only.
-@Component - to indicate that class provide the machanism for storage, retrieval, udate, delete, and  search operations on object, to marks the bean as spring managed components.
+
+
+@Autowired - tells Spring to inject a dependency, 
+
+
+
+
+@Component - class level annotation, mark the class as a Spring Bean, Spring Bean class is managed by Spring, also make it available for dependency injection
+
+@Service -  this layer is imlementation    of service facade design pattern.
+
+@Respository -
 
 @Controller - mark class as controller/web request handler
-@Service - it indicate, the class holding the business logic
+
 
 # Valiadtion annotation (Hibernate Validator)
 1. @Min(value=18, message="Must be greater than 18")
@@ -62,6 +71,12 @@ Ex.
 13. @Positive
 14. @PositiveOrZero
 15. @Size(min=10, max=200, message="")
+16. @Future - Date must be in future of given date
+17. @Past   -  Date must be in past of given date
+
+
+
+Java's Standard Bean Validation API -
 
 * Model Interface - provide spring to work with data, tranfer data between view and controller, acts as data container, supply attributes used for rendering views.
 * ModelMap - It also used to pass values to render a view., it gives the ability to pass a collection of values.
@@ -70,8 +85,28 @@ Ex.
 
 * @SpringBootApplication - used to mark the main class of Spring Boot Appliaction, it encapsulates  @Configuration, @EnableAutoConfiguration and @ComponentScan annotations with thier default attributes.
 
-@Configuration - tags the class as source of bean definations for the application context
+Behind the scene Creates application context and registers all beans , start the embeded server
+
+@Configuration - Able to register extra beans with @Bean or import other configuration classes
+
+@ComponentScan - Scan beans so that it can visisble to IOC.
+
 @EnableAutoConfiguration - it's name suggest , means Spring Boot looks for auto configuration beans on it's classpath and automatically applies on them.
 
+
+@Bean - to use third party class as Spring Bean
+
  
-* @ControllerAdvice - To handle exception at global level 
+@InitBinder - this annotation works as a pre-processor
+              It will pre-process each web requests coming into to our controller
+
+
+@Value("${app.name}") - at any var in class to retrive metadata from properties file. 
+
+
+@ConfigurationProperties(prefix="mail) - used to bind bunch of key value pair from properties file to DTO or bean class like entity, not other annotation required inside class
+
+@Profile("stg") -
+
+@Scope("Singleton") - scope of beans
+

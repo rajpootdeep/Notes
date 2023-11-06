@@ -25,8 +25,7 @@ Collection methods - add(), size(), remove(), clear(), iteerator(), addAll(), re
 						ArrayList
 						LikedList
 						Stack
-						Vector   - > all these class implements List
-
+						Vector   
 			Methods of List
 					get(), set(), toArray(), toString() - convert list in to array, contains()
 

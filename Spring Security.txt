@@ -1,12 +1,25 @@
 ------------------------------------------------------------------------------------------Spring Security--------------------------------------------------------------
+Spring Security defines a framework for security.
 
+Implemented using servlet filters in the background
+
+Two methods of securing an app : declarative and programmatic
+
+Declarative - define app security constraints in configuration class, 
+
+Programatic - Spring Security provides an API for custom application coding.
+
+Spring provide a bulk of security functionality with servlet filters
 
 
 --> If Spring Security is on the classpath, Spring Boot automatically secures all HTTP endpoints with “basic” authentication. However, you can further customize the security settings, Spring Security provides a filter that intercepts that request and authenticates the user.
 
--> @EnableWebSecurity - Annotate WebSecurityConfig  class to enable spring security's web security support and provide spring MVC integration.
+-> @EnableWebSecurity - Annotate WebSecurityConfig  class to enable spring security's web security support and provide spring MVC integration, it will tell to spring that it is security class
 
--> SecurityFilterChain bean defines which URL path should be secured and which should not.
+-> SecurityFilterChain - this bean defines which URL path should be secured and which should not, first spring look for bean type of SecurityFilterChanin
 
 -> UserDetailsService bean setup an in-memory user store.
 
+
+
+Step

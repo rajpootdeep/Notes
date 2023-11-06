@@ -1,0 +1,24 @@
+Thymeleaf
+
+It is a java templating engine.
+Commonly used to generate the HTML views for web apps
+
+ThymeLeaf template - can be HTML page with some thymeleaf expression
+                     include dynamic content from Thymeleaf expression( can access Java code, objects, spring beans)
+                     it has .html extension
+
+
+In web app thymeleaf is processed on the server
+ location - src/main/resources/templates
+
+@ symbol refrence context path of your application (app root)
+
+Expression - 
+		th:action - Location to send form data
+		th:object - refrence to model attribute
+		th:field - Bind input field to a property on model attribute
+		action="#" - empty place holder Thymeleaf will handle real work
+
+
+		
+

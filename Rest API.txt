@@ -5,9 +5,9 @@
 
 @ResponseBody - tells controller that object returned is automatically serialized into JSON and passed back to HttpResponse object, when we use this annotatoion at method, spring converts the return value and writes it to the HTTP response automatically.
 
-@Requestbody - convert data from Json to Java object.
+@Requestbody - convert data from Json to Java object, it will bind the parameters of the method to the body of the HTTP request, to pass payload
 
-@PathVariable("aid") int aid  - used to handle template variables in the request URI mapping, and set them as method parametes.
+@PathVariable("aid") int aid  - Bind the path variable to method parameter
 
 #handle more than one path variable parameter using method parameter type java.util.Map<String,String>
 
@@ -26,10 +26,32 @@ We  can also handle optional path varible using Map.
 
 
 
+
+@PostConstruct - 
+
+
 Spring Boot exception Handling :
 
 @RestControllerAdvice + @ExceptionHandler
 
+@ExceptionHandler - define exception handler method, this method return a ResponseEntity
+
+
+
 1. Create Global Exception Handler class and annotate with RestControllerAdvice
 2. @ExceptionHandler(value ={IOException.class}) - annotate at method level that return error message
 3. @ResponseStatus(HttpStatus.BAD_REQUEST) - 
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+@ResponseStatus - 
+
+Preconditions.checkNotNull(resource);
+
+HATEOAS - Generate HAL responses with hyperlinks to resources
+Use standard implementation using HAL(JSON Hypertext Application Language) - simple format that gives a consistent and easy way to hyperlink between resources in your API.
+
+HAL Explorer - An API explorer for Restful Hypermedia APIs using HAL, Spring Boot HAL explorer auto-configures HAL explorer for Spring Boot projects

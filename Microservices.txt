@@ -1,0 +1,51 @@
+-----------------------------------------------------------------------------Microservices -------------------------------------------------------------------------
+Microservices are basically services are expose by REST in addition to that you have small deployable units and these should be cloud enabled.
+
+
+Challenges in building Microservices :
+
+Bounded Context  - what we should do and what not to do in a microservice
+Configuration Management - 
+Dynamic scale up and scale down - 
+
+
+	Naming Server (Eureka) - all the intances of all microservices would register with naming server.
+		
+		Service registration - 
+		Service discovery -
+
+	 Ribbon ( Client side load balancing ) - it will make sure load is evenly distributed among the existing instances that it get from naming server.
+
+	Feign (Easier REST Clients) - machanism to write simple RESTful clients
+ 
+		
+
+
+
+
+
+Visisbility and Monitoring -  
+
+
+	Zipkin Distributed Tracing server , we will use Spring Cloud bus to assign a ID to a request accross multiple component, we use Zipkin to trace  a request across multiple components.
+
+Lot of common features for example logging, security, analytics etc, we will not implements all these common features in every microservice, API gateways provide great solutions for these, we use for now Netflix ZULL API Gateway.
+
+We will also  implements Fault Tolerence using Hitrix, if a service is down Hytrix help us to configure a default response .
+
+	
+	
+
+
+
+Pack of cards -
+
+
+SpringCloudConfigServer - it provides an approach where you can store all the configuration for the all the different environments of all the Microservices in a git repository 
+
+
+Spring cloud config server - 8888
+Netflix Eureka Naming server 8761
+Netflix Zuul API Gateway 8765
+Zipkin Distributed Tracing Server -9411
+
