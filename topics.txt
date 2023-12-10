@@ -6,24 +6,23 @@ mvn site -DgeneratedReports=false
 
 mvn surefire-report:report-only
 
+------------------------------------------------------------------------------------------
 
+Garbage Collections
 
+Memory Management
 
+Networking
 
-Java 8 features :
+Sockets
 
-
-
-Collectors class
-
-
-
-Method refrence
-
+JVM
 ------------------------------------------------------------------------------------------
 
 
-Collection class
+Collections class
+
+Collectors class
 
 Arrays class
 
@@ -31,14 +30,6 @@ Arrays class
 Functional Programming 
 
 JVM architecture 
-
-
-
-Concurrency
-
-Future
-
-
 
 POJO
 
@@ -51,6 +42,51 @@ JMS
 JMX
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
-Logging in SpringBoot
+Movie ticket project
+
+Junit 5 TDD / Mockito
+
+Hibernate 
+
+SpringBoot complex
+
+Logging log4j/slf4j
+
+Java 11
+
+OpenAPI/ Swagger / Java Doc
+
+MySQL
+
+Redis
+
+Docker / Kubernetes
+
+Logback / slf4j
+
+Oauth2/JWT
+
+Jenkins
+
+Git
+
+AWS
+
+RabbitMQ / Kafka
+ 
+
+-----------------------------------------------------------------------------------------------------------------
+
+Revision by using in Movie Ticket project
+
+Exception handling in Springboot
+Spring AOP
+JPA/Hibernate
+
+
+
+
+
 

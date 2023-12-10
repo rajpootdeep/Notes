@@ -1,4 +1,4 @@
-11. How do you create a deadlock scenario programmatically in Java?
+ 11. How do you create a deadlock scenario programmatically in Java?
 14. How do you implement a binary search in Java?
 15. Write a Java program that illustrates merge sort
 24. Write a Java program that sorts HashMap by value.

@@ -60,6 +60,8 @@ Styles -: Bound - instance known at compile-time,
 Optional class 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Multithreading
 
@@ -109,7 +111,7 @@ ScheduledExecutorService interface provides 4 methods to schedule tasks:
 
  count(),
 
- min(Comparator), max(),
+ min(Comparator), max(),forEach()
 
  reduce(T identity, BinaryOperator) - identity is the initial value of the reduction and also what is returned if the stream is empty.
 
@@ -121,7 +123,7 @@ ScheduledExecutorService interface provides 4 methods to schedule tasks:
  --------
  map(Function) - transforming data
 
- flatMap() - 
+ flatMap() - same as map but it used when we need to flatnning nested stream structure
 
  sorted()  - 
 
@@ -156,7 +158,76 @@ Deque  - getFirst(),peekFirst(), getLast(), peekLast(), addFirst(), offerFirst()
 
 
 
+
+=====================================================================================================================================================================
+								'Implementation Of HashMap'
+
+
+insertion , removal, search/retrieval,contains - O(1)
+
+
+Collisions - Hash function can result in same hash value for different keys.
+`
+	Collision resolution techniques
+
+          1. Seprate Chaining(Open Hashing) - issue time complexity
+
+              Rehashing - create new double size bucket array after threshold value exceed then we perform rehashing of old keys
+
+	  2. Open Addressing(closed hashing) - 
+
+
+
+
+                                                               ' Implementation of HashSet '
+
+
+
+
+
+--------------------------------------------------------------------  Concurrent collections  -----------------------------------------------------------------------
+
+ConcurrentSkipListSet <--> TreeSet
+
+CocurrentSkipListMap   <--> TreeMap
+
+ConcurrentHashMap
+
+CopyOnWriteArrayList<>()
+
+CopyOnWriteArraySet<>()
+
+BlockingQueue
+
+		ConcurrentLinkedQueue
+
+		LinkedBlockingQueue
+
+
+ConcurrentModificationException
+
+-----------------------------------------------------------------   Synchronized collections  -----------------------------------------------------------------------
+
+Synchronized version of non-concurrent collection using the Collections utility class.
+
+-----
+
+A race condition occurs when two or more threads gain access to a shared resource at the same time.
+
+DeadLock
+LiveLock
+Starvation when  a thread is unable to gain access to a required resource
+
+
+
+
+
+
 equals() - compare two objects refreneces using the == operator
+
+
+
+
 
 --------------------------------------------------------------------  Generics ----------------------------------------------------------------------------------
 From 1.5 , prior to Generics collections are  known as raw collection whic are not type safety. Generics enable us to to write code of one type thatis applicable  for all types.
@@ -170,12 +241,20 @@ Lower bound wildcard ? super type  - List<? super Integer> list  -> Upward(can h
 For generic method generic marker is declared just before the return type
 
 
+--------------------------------------------------------    hashCode() and equals() -------------------------------------------------------------------------------
 
 
 
 
+-------------------------------------------------------------------  LVTI --------------------------------------------------------------------------------------------
+In certain scenarios , we can use the keyword 'var' instead of type - can be used in constructor , methods or init blocks
 
------------------------------------------------------------------------- Private Interface  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------ Annotations ----------------------------------------------------------------------------------
+@SafeVarargs  - must have varargs and be private , static or final
+
+Marker annotation has no elements
+
 
 
 

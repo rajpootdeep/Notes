@@ -162,6 +162,30 @@ Connection string holds DriverManager.getConnection();
 DriverManager -> Connection ->PreparedStatement -> Execute the SQL
 
 
+------------------------------------------------------------------------                       --------------------------------------------------------------
+Persistence Context is the first level cache where all the entities are fetched from database or saved to data base, it keeps track of any changes made into a managed entity.
+
+ @PersistenceContext   - To tell entity manager to use transaction persistence context.
+
+Extentended persistence context can span across multiple transactions
+'
+Note - we can't flush entity without transactions
+
+EntityManager is the interface that let us to interact with persistence context.
+
+Entity manager API provides collections of method to ineteract with database. -
+
+			persist(o), find(), detach(o) - detach an entity from the persistent context , merge(o) - any modification made to the detaiched entity into 			the managed entity, remove(o), 
+
+
+
+
+Concurency side effects Dirty read, NonRepeatable Read, Phantom read 
+Isolation levels - Read_Uncommited, Read_Commited, Repeatable read, Serializable
+
+@Cacheable -
+
+L2C puts , L2C hits , L2C misses
 
 
 @Transactional - automatically begin and end the a transaction for your JPA code. Handles transaction management

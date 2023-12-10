@@ -55,3 +55,16 @@ HATEOAS - Generate HAL responses with hyperlinks to resources
 Use standard implementation using HAL(JSON Hypertext Application Language) - simple format that gives a consistent and easy way to hyperlink between resources in your API.
 
 HAL Explorer - An API explorer for Restful Hypermedia APIs using HAL, Spring Boot HAL explorer auto-configures HAL explorer for Spring Boot projects
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Talk to Database : 1. Spring Boot Starter Data JPA 2. Sprinng Boot Starter JDBC
+
+Starters : Convenient dependency descriptors for different features.
+
+Spring.profiles.active=prod ->application-prod.properties
+
+@ConfigurationProperties(prefix="currency-service")
+
+Speing Boot is a spring project
