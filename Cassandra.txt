@@ -1,0 +1,160 @@
+---------------------------------------------------------------------------- Cassandra ---------------------------------------------------------------------------
+It's noSQL distributed database, which follows the CAP theorem.
+
+Column > Row > Table >  KeySpace > Cluster
+----------------------------------------------------------------   KeySpace -------------------------------------------------------------------------------------
+
+create/alter keyspace ks with replication ={'class' : 'NetworkTopologyStrategy', 'replication_factor' : '3'};
+
+Reploication_Factor - Decides how many copies would be there
+
+Replication Strategy - Decides which all nodes will carry those copies.
+
+			1. SimpleStrategy - consecutive nodes will hold the replica in clock wise dir.
+
+			2. NetworkTopologyStrategy - Used in case of multiple data centre, 
+
+Coordinator node - 
+
+Primary node -
+
+Replica Node -
+
+Remote Coordinator -
+
+
+
+------------------------------------------------------------------ Tunable   Consistency --------------------------------------------------------------------
+
+
+Write Consistency - No of replicas on which write must succeed before returning success to client.
+
+		It has four consistency level 
+						One - Coordinator will wait for only one replica node to complete, 
+ All - ,
+  Quoram - if we have quoram value 2, coordinator will wait for exactly two replica node to complete, 
+ Local_Quoram  - if local_quoram is 2, 2 replicas from the same datacenter as where the coordinator node reside should complete the write operation before coordinator node sends success notification to client.
+each quoram - if each_quoram is 2 , 2 replicas per datacenter needs to complete the write operation before node sends success notification to client.
+
+
+
+Read Consistency - No of replicas to check for consistency before returning data to client .
+
+Snitches - to get info about fastest node. 
+
+		It has same as write consistency level
+
+ 
+
+One - Coordinator will send request only to the fastest node to get requested data.
+
+quoram - if quoram is 2 , coordinator will send read request to fastest node for actual data and will send digest request to one of the replica node for hash of data
+
+local_quoram - if local_quoram is 2 , cooridinator will send read request to 2 replicas in the local datacenter
+
+
+-------------------------------------------------------------------- Gossip Protocol  ------------------------------------------------------------------------
+
+
+Nodes gossips with each other every second to share state info about each other
+
+Gossiper - Gossiper initiates a gossips session with any random node in the cluster.
+
+
+---------------------------------------------------------- Read and write process in single node/machine ---------------------------------------------------------
+
+write -> commit logs ( one commit log per node )   -> Memtable (in memory DS, one memtable per table) -> SSTables (immutable)
+
+In-memory Data Structure - : 
+
+Bloom filter - Each SSTable has bloom filter associated, it tells wheather partition key is present or not in SSTable , it can give false positive.
+
+Partition Index Summary File - Summary for index file to improve the performance.
+
+Row Cache - subset of rows in memory,It is nothing but cache of row,  configurable All, None, N
+
+Key Cache -  key value pair ( key - partition key, value - location of data on disk) that maps partion key to location of data on disk
+
+
+Component of SSTable - : 
+
+Data file -Actual data is stored, Partition key along with rows associated  with patition key.
+
+
+Partition Index File - Maps partition key to location of data on disk,  location for row in data file for a partition key
+
+
+--------------------------------------------------------------- CAP Theorem --------------------------------------------------------------------------------------
+
+Consistency Availabity Partition Tolerance 
+
+
+
+
+
+******************************* if memTable does not contain the data
+
+row cache -> found in row cache -> client
+
+row cache / not found in row cache -> bloom filter -> scan for bloomfilter of next SSTable -> key cache -> Data file -> client
+											     key cache-> Partition Index summary file -> partition index file  -> Data file -> client
+											   
+
+
+-----------------------------------------------------------------------------  Compaction --------------------------------------------------------------------
+
+Merge data based on partion key , remove rows with tombstones.
+
+
+
+
+
+
+Describe   .....
+
+we can't alter name of keyspace
+execute repair command after changing replication factor or any modification - nodetool repair -full
+
+
+Node - where the actual data is stored.
+
+Data Center - it is collection of nodes
+
+Cluster - collection of many data centers
+ 
+
+Primary Key = Partition key + Clustering Key
+
+Partition Key decides how data is distributed across nodes, which data goes to which node.
+
+		Every node is assigned a unique token/ range of token that determines which row will go to which node.
+		A hashing function called partitioner is used to generate token values 
+
+Clustering Key Decides how data is stored on single node.
+
+		
+			Rows are sorted by clustering keys		
+
+		
+ex - Composite PK  
+
+...  primary key ((f1), f2,f3) with clustering order by (f2 DESC, f3 ASC));
+
+
+' Allow Filtering '  clause is used when apply filter only on clustring key not used Partition key
+
+
+ ---------------------------------------------------------    Data Types       ------------------------------------------------------------------------------------
+
+int biginit smallint tinyint varint float double decimal
+
+text varchar
+
+set<> list<> map<>
+
+boolean blob uuid timeuuid user-defined
+
+
+ 
+
+

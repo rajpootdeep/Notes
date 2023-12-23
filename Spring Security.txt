@@ -1,4 +1,4 @@
-------------------------------------------------------------------------------------------Spring Security--------------------------------------------------------------
+---------------------------------------------------Spring Security---------------------------------------------
 Spring Security defines a framework for security.
 
 Implemented using servlet filters in the background

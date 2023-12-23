@@ -1,0 +1,68 @@
+-----------------------------------------------------------------------------   JMS  -----------------------------------------------------------------------------
+
+Java Message Service API is messanging standard that allows appliaction components based on J2EE to create send receive and read messages. It enabled distributed communication that is loosely coupled and Asynchronous.
+
+JMS API support two distinct models :
+		
+				1. Point-to-point
+				2. Publish-and-subscribe
+
+ 
+MOM (Message Oriented Middleware) -
+
+Elements -
+
+JMS Provider - An implementation of the JMS interface for message-oriented middleware
+
+JMS client - An application or process that produces and /or receives messages.
+
+JMS producer/publisher - A JMS clients that receives messages.
+
+JMS consumer/subscriber  - A JMS client that receives messages.
+
+JMS message - An Object that contains the data being transferred between JMS clients.
+
+JMS queue - A staging area that contains messages that has been sent and are waiting to be read(by only one consumer).  
+
+JMS topic - A distribution mechanism for publishing messages that are delivered to multiple subscribers.
+
+Provider implementations 
+
+To use JMS, one must have a JMS provider that can manage the sessions, queues and topics. 
+
+
+
+
+artemis create /C:/Users/HP/Downloads/mb
+
+
+artemis-service.exe run 
+
+JMS Destination - it is an  object that represents the target of messages that the client produces and the source of messages that the client consumes.
+In PTP destination represents queues; in pub/sub messaging , destination repsresents topics.
+
+The JMS client can use a single destination object to put messages on and to get messages from.
+
+
+Message =  Message Header + Message Properties + Message Body / Payload
+
+MessageID and CorrelationID are to link the request and response.
+
+
+
+----------------------------------------------------------------------     Message Types ----------------------------------------------------------------------------
+
+TextMessage  - String
+
+ByteMessage  - stream of uninterpreted bytes
+
+ObjectMessage  - serialize object
+
+StreamMessage -  stream of primitive values
+
+MapMessagen  - set of name/value pair
+
+
+
+
+
